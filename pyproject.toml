@@ -1,55 +1,25 @@
-[tool.uv]
-index-strategy = "unsafe-best-match"
-# Ép uv cài đặt các thư viện cho đúng hệ điều hành
-required-environments = [
-    "sys_platform == 'linux' and platform_machine == 'x86_64'",
-]
-# Khai báo nhóm mặc định để cài đặt
-default-groups = ["gpu"]
-
-[[tool.uv.index]]
-name = "pytorch"
-url = "https://download.pytorch.org/whl/cu121"
-explicit = true
-
 [project]
 name = "viettts-tinhthe"
 version = "1.1.7"
-description = "VietTTS by Tinhthe - Advanced on-device Vietnamese TTS"
+description = "VietTTS by Tinhthe"
 requires-python = ">=3.10"
 dependencies = [
-    "phonemizer>=3.3.0",
-    "neucodec>=0.0.1",
-    "vieneu-utils",
-    "librosa>=0.11.0",
-    "gradio>=5.0.0",
-    "onnxruntime>=1.16.0",
-    "datasets>=3.0.0",
-    "torch",
-    "torchaudio",
-    "perth>=0.2.0",
-    "llama-cpp-python>=0.2.0",
+    "phonemizer==3.3.0",
+    "neucodec==0.0.4",
+    "librosa==0.11.0",
+    "gradio==5.49.1",
+    "onnxruntime==1.23.2",
+    "datasets",
+    "torch==2.8.0",
+    "torchaudio==2.8.0",
+    "perth==1.0.0",
+    "llama-cpp-python==0.3.16",
     "requests",
     "pyyaml",
 ]
 
-# ĐÂY LÀ PHẦN SỬA LỖI: Khai báo chính xác nhóm gpu cho uv
-[dependency-groups]
-gpu = [
-    "lmdeploy",
-    "transformers",
-    "accelerate",
-]
+[tool.uv]
+index-strategy = "unsafe-best-match"
 
 [tool.setuptools]
 packages = ["vieneu", "vieneu_utils"]
-
-[tool.uv.sources]
-torch = [
-    { index = "pytorch", marker = "sys_platform != 'darwin'" },
-    { index = "pypi", marker = "sys_platform == 'darwin'" }
-]
-torchaudio = [
-    { index = "pytorch", marker = "sys_platform != 'darwin'" },
-    { index = "pypi", marker = "sys_platform == 'darwin'" }
-]
