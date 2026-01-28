@@ -4,27 +4,27 @@ text_settings:
 
 backbone_configs:
   "VieNeu-TTS (GPU)":
-    repo: pnnbao-ump/VieNeu-TTS
+    repo: tinhthe/viettts
     supports_streaming: false
     description: Chất lượng cao nhất, yêu cầu GPU
   "VieNeu-TTS-0.3B (GPU)":
-    repo: pnnbao-ump/VieNeu-TTS-0.3B
+    repo: tinhthe/viettts
     supports_streaming: false
     description: Phiên bản nhẹ cho GPU, tốc độ nhanh x2 so với phiên bản gốc 
   "VieNeu-TTS-q8-gguf":
-    repo: pnnbao-ump/VieNeu-TTS-q8-gguf
+    repo: tinhthe/viettts
     supports_streaming: true
     description: Phiên bản GGUF có chất lượng cao nhất
   "VieNeu-TTS-q4-gguf":
-    repo: pnnbao-ump/VieNeu-TTS-q4-gguf
+    repo: tinhthe/viettts
     supports_streaming: true
     description: Cân bằng giữa chất lượng và tốc độ
   "VieNeu-TTS-0.3B-q4-gguf":
-    repo: pnnbao-ump/VieNeu-TTS-0.3B-q4-gguf
+    repo: tinhthe/viettts
     supports_streaming: true
     description: Phiên bản cực nhẹ, chạy mượt trên CPU
   "VieNeu-TTS-0.3B-q8-gguf":
-    repo: pnnbao-ump/VieNeu-TTS-0.3B-q8-gguf
+    repo: tinhthe/viettts
     supports_streaming: true
     description: Phiên bản 0.3B nén Q8, chất lượng cao và tốc độ nhanh trên CPU
 
