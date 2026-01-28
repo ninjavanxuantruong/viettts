@@ -985,13 +985,13 @@ with gr.Blocks(theme=theme, css=css, title="VieNeu-TTS", head=head_html) as demo
     <div class="model-card-content">
         <div class="model-card-item">
             <strong>Models:</strong>
-            <a href="https://huggingface.co/pnnbao-ump/VieNeu-TTS" target="_blank" class="model-card-link">VieNeu-TTS</a>
+            <a href="https://huggingface.co/tinhthe/viettts" target="_blank" class="model-card-link">VieNeu-TTS</a>
             <span>•</span>
             <a href="https://huggingface.co/pnnbao-ump/VieNeu-TTS-0.3B" target="_blank" class="model-card-link">VieNeu-TTS-0.3B</a>
         </div>
         <div class="model-card-item">
             <strong>Repository:</strong>
-            <a href="https://github.com/pnnbao97/VieNeu-TTS" target="_blank" class="model-card-link">GitHub</a>
+            <a href="https://github.com/ninjavanxuantruong/viettts" target="_blank" class="model-card-link">GitHub</a>
         </div>
         <div class="model-card-item">
             <strong>Tác giả:</strong>
