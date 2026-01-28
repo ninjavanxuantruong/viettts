@@ -1,32 +1,22 @@
 [tool.uv]
 index-strategy = "unsafe-best-match"
+# Ép uv cài đặt các thư viện cho đúng hệ điều hành
 required-environments = [
-    "sys_platform == 'win32' and platform_machine == 'AMD64'",
     "sys_platform == 'linux' and platform_machine == 'x86_64'",
-    "sys_platform == 'darwin' and platform_machine == 'arm64'",
 ]
-override-dependencies = [
-    "nvidia-nccl-cu12; sys_platform == 'linux'",
-]
+# Khai báo nhóm mặc định để cài đặt
 default-groups = ["gpu"]
 
 [[tool.uv.index]]
 name = "pytorch"
-url = "https://download.pytorch.org/whl/cu128"
+url = "https://download.pytorch.org/whl/cu121"
 explicit = true
-
-[[tool.uv.index]]
-name = "pypi"
-url = "https://pypi.org/simple"
 
 [project]
 name = "viettts-tinhthe"
 version = "1.1.7"
 description = "VietTTS by Tinhthe - Advanced on-device Vietnamese TTS"
-readme = "README_PYPI.md"
-license = { file = "LICENSE" }
 requires-python = ">=3.10"
-# --- PHẦN NÀY QUAN TRỌNG ĐỂ KHÔNG BỊ LỖI MODULE ---
 dependencies = [
     "phonemizer>=3.3.0",
     "neucodec>=0.0.1",
@@ -43,13 +33,10 @@ dependencies = [
     "pyyaml",
 ]
 
-[project.urls]
-"Homepage" = "https://github.com/ninjavanxuantruong/viettts"
-"Repository" = "https://github.com/ninjavanxuantruong/viettts"
-
-[project.optional-dependencies]
+# ĐÂY LÀ PHẦN SỬA LỖI: Khai báo chính xác nhóm gpu cho uv
+[dependency-groups]
 gpu = [
-    "lmdeploy; sys_platform != 'darwin'",
+    "lmdeploy",
     "transformers",
     "accelerate",
 ]
